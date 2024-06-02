@@ -47,6 +47,8 @@ public class Player : NetworkBehaviour
 
     private void Rotation()
     {
+        if (!this.isLocalPlayer) return;
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if(Physics.Raycast(ray, out RaycastHit hit, 50))
         {

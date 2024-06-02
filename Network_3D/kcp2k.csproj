@@ -58,25 +58,25 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\ErrorCode.cs" />
+    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\KcpServerConnection.cs" />
+    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\KcpConfig.cs" />
+    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\Extensions.cs" />
+    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\kcp\AssemblyInfo.cs" />
+    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\kcp\Kcp.cs" />
     <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\KcpServer.cs" />
     <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\KcpPeer.cs" />
     <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\KcpClient.cs" />
+    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\empty\KcpServerNonAlloc.cs" />
     <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\kcp\Pool.cs" />
-    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\KcpChannel.cs" />
     <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\KcpHeader.cs" />
     <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\KcpState.cs" />
-    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\ErrorCode.cs" />
     <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\Common.cs" />
-    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\KcpServerConnection.cs" />
     <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\kcp\AckItem.cs" />
-    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\KcpConfig.cs" />
-    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\empty\KcpServerNonAlloc.cs" />
-    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\Extensions.cs" />
-    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\kcp\Utils.cs" />
-    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\kcp\AssemblyInfo.cs" />
     <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\kcp\Segment.cs" />
+    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\KcpChannel.cs" />
+    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\kcp\Utils.cs" />
     <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\highlevel\Log.cs" />
-    <Compile Include="Assets\Mirror\Transports\KCP\kcp2k\kcp\Kcp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Transports\KCP\kcp2k\KCP.asmdef" />
@@ -420,8 +420,20 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.36f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Mono.CecilX.Rocks">
+      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Rocks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.CecilX.Pdb">
+      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Pdb.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography">
+      <HintPath>Assets\Mirror\Plugins\BouncyCastle\BouncyCastle.Cryptography.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
@@ -430,6 +442,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.CecilX">
+      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
@@ -458,22 +474,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.CecilX.Rocks">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Rocks.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.CecilX.Pdb">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Pdb.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="BouncyCastle.Cryptography">
-      <HintPath>Assets\Mirror\Plugins\BouncyCastle\BouncyCastle.Cryptography.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.CecilX">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Mono.CecilX.Mdb">

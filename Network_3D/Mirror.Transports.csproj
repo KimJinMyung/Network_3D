@@ -58,23 +58,23 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Mirror\Transports\KCP\KcpTransport.cs" />
     <Compile Include="Assets\Mirror\Transports\Encryption\EncryptionTransport.cs" />
     <Compile Include="Assets\Mirror\Transports\KCP\ThreadedKcpTransport.cs" />
-    <Compile Include="Assets\Mirror\Transports\Encryption\EncryptedConnection.cs" />
     <Compile Include="Assets\Mirror\Transports\Latency\LatencySimulation.cs" />
     <Compile Include="Assets\Mirror\Transports\Telepathy\TelepathyTransport.cs" />
-    <Compile Include="Assets\Mirror\Transports\Threaded\ThreadedTransport.cs" />
-    <Compile Include="Assets\Mirror\Transports\SimpleWeb\Editor\ClientWebsocketSettingsDrawer.cs" />
+    <Compile Include="Assets\Mirror\Transports\Multiplex\MultiplexTransport.cs" />
+    <Compile Include="Assets\Mirror\Transports\Encryption\EncryptedConnection.cs" />
     <Compile Include="Assets\Mirror\Transports\Middleware\MiddlewareTransport.cs" />
+    <Compile Include="Assets\Mirror\Transports\Edgegap\EdgegapRelay\EdgegapKcpTransport.cs" />
+    <Compile Include="Assets\Mirror\Transports\Encryption\EncryptionCredentials.cs" />
+    <Compile Include="Assets\Mirror\Transports\Edgegap\EdgegapRelay\EdgegapKcpServer.cs" />
+    <Compile Include="Assets\Mirror\Transports\KCP\KcpTransport.cs" />
+    <Compile Include="Assets\Mirror\Transports\SimpleWeb\Editor\ClientWebsocketSettingsDrawer.cs" />
     <Compile Include="Assets\Mirror\Transports\Edgegap\EdgegapRelay\Protocol.cs" />
     <Compile Include="Assets\Mirror\Transports\Edgegap\EdgegapRelay\RelayCredentialsFromArgs.cs" />
     <Compile Include="Assets\Mirror\Transports\SimpleWeb\SimpleWebTransport.cs" />
     <Compile Include="Assets\Mirror\Transports\Encryption\PubKeyInfo.cs" />
-    <Compile Include="Assets\Mirror\Transports\Edgegap\EdgegapRelay\EdgegapKcpTransport.cs" />
-    <Compile Include="Assets\Mirror\Transports\Encryption\EncryptionCredentials.cs" />
-    <Compile Include="Assets\Mirror\Transports\Multiplex\MultiplexTransport.cs" />
-    <Compile Include="Assets\Mirror\Transports\Edgegap\EdgegapRelay\EdgegapKcpServer.cs" />
+    <Compile Include="Assets\Mirror\Transports\Threaded\ThreadedTransport.cs" />
     <Compile Include="Assets\Mirror\Transports\Edgegap\EdgegapRelay\EdgegapKcpClient.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -417,8 +417,20 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.36f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Mono.CecilX.Rocks">
+      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Rocks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.CecilX.Pdb">
+      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Pdb.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BouncyCastle.Cryptography">
+      <HintPath>Assets\Mirror\Plugins\BouncyCastle\BouncyCastle.Cryptography.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
@@ -427,6 +439,10 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.CecilX">
+      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
@@ -455,22 +471,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.CecilX.Rocks">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Rocks.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.CecilX.Pdb">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Pdb.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="BouncyCastle.Cryptography">
-      <HintPath>Assets\Mirror\Plugins\BouncyCastle\BouncyCastle.Cryptography.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Mono.CecilX">
-      <HintPath>Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Mono.CecilX.Mdb">
